@@ -58,6 +58,12 @@ Copyright (C) 2012 Andreas Schneider <asn@cryptomilk.org>
 
   $ repo sync
 
+  - Apply patches, we need to apply some patches on upstream code to fix things:
+
+http://review.cyanogenmod.com/#/c/14631 (Camera)
+http://review.cyanogenmod.com/#/c/15058/ (GPS)
+http://review.cyanogenmod.com/#/c/25842/ (OMX stuff)
+http://review.cyanogenmod.com/#/c/25116/ (Graphics - Untested)
 
   - Setup vendor
 
