@@ -23,7 +23,6 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 $(call inherit-product, device/htc/msm7x27-common/msm7x27.mk)
 $(call inherit-product, device/htc/marvel-common/marvel.mk)
-$(call inherit-product, vendor/htc/marvel/marvel-vendor-blobs.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/marvel/overlay
 
@@ -82,7 +81,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.dec.vid.wmv.enabled=1 \
     dalvik.vm.dexopt-flags=m=y \
     net.bt.name=Android \
-    ro.config.sync=yes
+    ro.config.sync=yes \
+    ro.telephony.ril.v3=signalstrength,skipbrokendatacall
 
 # Add device specific modules
 PRODUCT_PACKAGES += \

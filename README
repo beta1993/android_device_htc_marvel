@@ -1,7 +1,7 @@
 Device configuration for the HTC Marvel
 
 Copyright (C) 2011 The CyanogenMod Project
-Copyright (C) 2012 Andreas Schneider <asn@cryptomilk.org>
+Copyright (C) 2011 Andreas Schneider <asn@cryptomilk.org>
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@ Copyright (C) 2012 Andreas Schneider <asn@cryptomilk.org>
 
 * Description
 
-  This repository is for CM10 on HTC Marvel.
+  This repository is for CM9 on HTC marvel.
   It is still a work in progress.
 
 
@@ -29,7 +29,7 @@ Copyright (C) 2012 Andreas Schneider <asn@cryptomilk.org>
     Light:   CM3602
 
 
-* How To Build CM10 for HTC Marvel
+* How To Build CM9 for HTC Marvel
 
   - Make a workspace
 
@@ -39,33 +39,28 @@ Copyright (C) 2012 Andreas Schneider <asn@cryptomilk.org>
 
   - Do repo init & sync
 
-  $ repo init -u git://github.com/CyanogenMod/android.git -b jellybean
+  $ repo init -u git://github.com/CyanogenMod/android.git -b ics
 
 
   - Create .repo/local_manifest.xml with the following content:
 
-<?xml version="1.0" encoding="UTF-8"?>
+  <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
-      <project name="MarvellousAndroid/android_device_htc_common" path="device/htc/common" revision="gingerbread" />
-      <project name="MarvellousAndroid/android_device_htc_marvel" path="device/htc/marvel" />
-      <project name="MarvellousAndroid/android_device_htc_marvel-common" path="device/htc/marvel-common" />
-      <project name="MarvellousAndroid/android_device_htc_msm7x27-common" path="device/htc/msm7x27-common" />
-      <project name="MarvellousAndroid/android_device_htc_msm7x27-recovery" path="device/htc/msm7x27-recovery" />
-      <project name="MarvellousAndroid/android_kernel_htc_msm7227" path="kernel/htc/msm7227" />
-      <project name="MarvellousAndroid/android_vendor_htc_marvel" path="vendor/htc/marvel" />
-      <project name="MarvellousAndroid/android_vendor_qcom_msm7x27" path="vendor/qcom/msm7x27" />
+      <remote  name="cryptomilk"
+               fetch="git://git.cryptomilk.org/" />
+
+      <project name="projects/marvel/kernel_htc_msm7227.git" path="kernel/htc/msm7227" remote="cryptomilk" />
+      <project name="CyanogenMod/android_device_htc_common" path="device/htc/common" revision="refs/heads/gingerbread" />
+      <project name="projects/marvel/android_device_htc_msm7x27-recovery.git" path="device/htc/msm7x27-recovery" remote="cryptomilk" />
+      <project name="projects/marvel/android_device_htc_msm7x27-common.git" path="device/htc/msm7x27-common" remote="cryptomilk" />
+      <project name="projects/marvel/android_device_htc_marvel-common.git" path="device/htc/marvel-common" remote="cryptomilk" />
+      <project name="projects/marvel/android_device_htc_marvel.git" path="device/htc/marvel" remote="cryptomilk" />
+      <project name="projects/marvel/android_vendor_qcom_msm7x27.git" path="vendor/qcom/msm7x27" remote="cryptomilk" />
+      <project name="projects/marvel/android_vendor_htc_marvel.git" path="vendor/htc/marvel" remote="cryptomilk" />
   </manifest>
 
   $ repo sync
 
-  - Apply patches, we need to apply some patches on upstream code to fix things:
-
-http://review.cyanogenmod.com/#/c/14631 (Camera)
-http://review.cyanogenmod.com/#/c/15058/ (GPS)
-
-  So... type this:
-
-cd bionic;git fetch http://review.cyanogenmod.com/CyanogenMod/android_bionic refs/changes/31/14631/1 && git cherry-pick FETCH_HEAD;cd ..;cd hardware/msm7k;git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_msm7k refs/changes/58/15058/3 && git cherry-pick FETCH_HEAD;cd ..;cd ..;
 
   - Setup vendor
 
@@ -78,10 +73,10 @@ cd bionic;git fetch http://review.cyanogenmod.com/CyanogenMod/android_bionic ref
   $ lunch cm_marvel-eng
 
 
-  - Build CM10
+  - Build CM9
 
   $ export USE_CCACHE=1
-  $ make -j8 bacon
+  $ make -j4 bacon
 
 
 * Thanks
@@ -90,7 +85,6 @@ cd bionic;git fetch http://review.cyanogenmod.com/CyanogenMod/android_bionic ref
   alquez
   Droste
   pabloPL
-  modpunk(gladiac)
- 
+
 ----
 EOF
