@@ -50,7 +50,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.def.agps.mode=2 \
     ro.ril.hsxpa=2 \
     ro.ril.gprsclass=12 \
-    mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0 \
     wifi.interface = wlan0 \
     wifi.supplicant_scan_interval=15 \
     ro.sf.lcd_density = 160 \
@@ -82,7 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=m=y \
     net.bt.name=Android \
     ro.config.sync=yes \
-    ro.telephony.ril.v3=signalstrength,skipbrokendatacall
+    ro.telephony.ril.v3=signalstrength,skipbrokendatacall,singlepdp
 
 # Add device specific modules
 PRODUCT_PACKAGES += \
