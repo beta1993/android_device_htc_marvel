@@ -44,11 +44,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libhtc_ril.so \
     ro.ril.enable.dtm=1 \
-    ro.ril.hsdpa.category=8 \
     ro.ril.hsupa.category=5 \
-    ro.ril.disable.fd.plmn.prefix=23402,23410,23411 \
     ro.ril.def.agps.mode=2 \
-    ro.ril.hsxpa=2 \
     ro.ril.gprsclass=12 \
     wifi.interface = wlan0 \
     wifi.supplicant_scan_interval=15 \
@@ -81,7 +78,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=m=y \
     net.bt.name=Android \
     ro.config.sync=yes \
-    ro.telephony.ril.v3=signalstrength,skipbrokendatacall,singlepdp
+    ro.telephony.ril.v3=signalstrength,skipbrokendatacall
 
 # Add device specific modules
 PRODUCT_PACKAGES += \
