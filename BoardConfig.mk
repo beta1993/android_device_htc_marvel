@@ -62,3 +62,7 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/htc/marvel/recovery/graphics.c
 BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
+
+#Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/marvel/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/marvel/bluetooth/btvendor_marvel.txt

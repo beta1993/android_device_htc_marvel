@@ -17,6 +17,7 @@ on early-init
 
 
 on early-fs
+
     # bluetooth power up/down interface
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -65,7 +66,6 @@ on early-fs
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
-
 
 on init
     mount rootfs rootfs / remount
