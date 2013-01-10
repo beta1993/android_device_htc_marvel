@@ -5,6 +5,9 @@
 ###################
 # Graphics
 ###################
+ #WiFi
+ wifi.interface=wlan0
+ wifi.supplicant_scan_intervals=15
 
 ###
 # When set to 1 this options lets you choose the composition type in gralloc
@@ -45,6 +48,7 @@ com.qc.hdmi_out=false
 ###################
 
 persist.service.adb.enable=1
+persist.sys.use_dithering=2
 
 # htc ril
 #
