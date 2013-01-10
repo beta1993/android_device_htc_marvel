@@ -175,12 +175,18 @@ service compcache /system/bin/handle_compcache
 on property:persist.service.zram=10
     start compcache
 
-on property:persist.service.zram=18
+on property:persist.service.zram=30
     start compcache
 
-on property:persist.service.zram=26
+on property:persist.service.zram=50
     start compcache
 
+# compcache - handle at boot
+ service compcache /system/bin/handle_compcache
+    class main   
+    user root
+    group root
+    disabled
 
 service srv_ser2net /system/bin/ser2net -n
     disabled
